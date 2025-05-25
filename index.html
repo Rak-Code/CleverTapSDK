@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CleverTap Web Integration</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript">
+    var clevertap = { event: [], profile: [], account: [], onUserLogin: [], notifications: [], privacy: [] };
+    clevertap.account.push({ "id": "Z44-Z4K-K65Z" });
+    clevertap.privacy.push({ optOut: false }); // set the flag to true, if the user has opted out of sharing their data
+    clevertap.privacy.push({ useIP: false }); // set the flag to true, if the user has opted in for IP tracking
+
+    (function () {
+      var wzrk = document.createElement('script');
+      wzrk.type = 'text/javascript';
+      wzrk.async = true;
+      wzrk.src = 'https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wzrk, s);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>CleverTap User Portal</h2>
+  <label>Name:</label>
+  <input type="text" id="name" placeholder="Your Name">
+
+  <label>Email Address:</label>
+  <input type="email" id="email" placeholder="Your Email id ">
+
+  <label>Phone Number:</label>
+  <input type="tel" id="phone" placeholder="+911234567890">
+  <small style="color:#888;">Include country code, e.g. +911234567890</small>
+
+  <label>Date of Birth:</label>
+  <input type="date" id="dob">
+
+  <button onclick="loginUser()">Login</button>
+  <button onclick="pushProfile()">Profile Push</button>
+  <button onclick="askForPush()">Ask For Push</button>
+  <button onclick="raiseEvent()">Raise Event</button>
+</div>
+
+<script src="main.js"></script>
+
+</script>
+
+</body>
+</html>
