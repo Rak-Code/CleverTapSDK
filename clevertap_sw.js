@@ -1,5 +1,5 @@
-// clevertap_sw.js
-// Required for CleverTap Web Push. Can be empty for demo/testing.
+
+// Required for CleverTap Web Push
 self.addEventListener('push', function(event) {
-  // You can customize push handling here if needed
+  //  can customize push handling here if needed
 });
